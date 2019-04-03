@@ -100,7 +100,7 @@ class SwiftVolumeButtonHandler: NSObject {
             try audioSession.setCategory(Config.category, options: Config.categoryOptions)
             try audioSession.setActive(true, options: [])
             
-            // this is the actual "lisetening" part
+            // this is the actual "listening" part
             audioSession.addObserver(self, forKeyPath: Config.sessionVolumeKeyPath, options: [.old, .new], context: nil)
             
             audioLevel = audioSession.outputVolume
