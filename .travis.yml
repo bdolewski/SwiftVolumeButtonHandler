@@ -1,6 +1,9 @@
+os:
+  - osx
 language: swift
-osx_image: xcode10.2
-
-xcode_project: SwiftVolumeButtonHandler/SwiftVolumeButtonHandler.xcodeproj 
-xcode_scheme: SwiftVolumeButtonHandler 
-xcode_destination: platform=iOS Simulator,OS=12.2,name=iPhone XS
+osx_image: xcode11
+env:
+  - PROJECT_NAME=SwiftVolumeButtonHandler
+install: swift package update
+script:
+  - xcodebuild build -sdk iphoneos -scheme $PROJECT_NAME

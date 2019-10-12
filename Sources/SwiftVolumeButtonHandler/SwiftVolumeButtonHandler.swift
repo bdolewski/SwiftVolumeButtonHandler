@@ -64,7 +64,7 @@ class SwiftVolumeButtonHandler: NSObject {
         
         observerBackground = NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { [weak self] notification in
             let audioSession = AVAudioSession.sharedInstance()
-            audioSession.removeObserver(self!, forKeyPath: "outputVolume")
+            audioSession.removeObserver(self!, forKeyPath: Config.sessionVolumeKeyPath)
         }
     }
     
